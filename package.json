@@ -2,13 +2,22 @@
   "name": "overlookingbot",
   "version": "1.0.0",
   "description": "a slack bot for Team 6083 Overlooking",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Team6083",
   "license": "MIT",
   "dependencies": {
-    "@slack/client": "^4.8.0"
+    "@slack/client": "^4.8.0",
+    "config": "^2.0.1",
+    "csv-write-stream": "^2.0.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "express": "^4.16.4",
+    "mkdirp": "^0.5.1",
+    "morgan": "^1.9.1",
+    "tracer": "^0.9.2"
   }
 }
