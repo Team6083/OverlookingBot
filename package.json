@@ -1,0 +1,14 @@
+{
+  "name": "overlookingbot",
+  "version": "1.0.0",
+  "description": "a slack bot for Team 6083 Overlooking",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Team6083",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/client": "^4.8.0"
+  }
+}
