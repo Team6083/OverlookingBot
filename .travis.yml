@@ -3,6 +3,9 @@ node_js:
     - '7'
 cache: npm
 notifications:
-    slack: overlooking6083:abUaxczoJQfFcRW72EsYbePe
-        on_success: change # default: always
-        on_failure: always # default: always
+    slack:
+        rooms:
+            - overlooking6083:abUaxczoJQfFcRW72EsYbePe#overlookingbot-dev
+        on_success: always
+        on_failure: always
+        on_cancel: always
