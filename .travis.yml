@@ -4,3 +4,6 @@ node_js:
 cache: npm
 notifications:
     slack: overlooking6083:abUaxczoJQfFcRW72EsYbePe
+    webhooks:
+        urls:
+            - https://webhook.site/8f7557b1-2177-4c72-bb2a-68e76e0fca55
