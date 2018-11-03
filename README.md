@@ -3,4 +3,4 @@
 
 # OverlookingBot
 
-a slack bot for Team 6083 Overlooking
+A slack bot for Team 6083 Overlooking
