@@ -4,3 +4,5 @@ node_js:
 cache: npm
 notifications:
     slack: overlooking6083:abUaxczoJQfFcRW72EsYbePe
+        on_success: change # default: always
+        on_failure: always # default: always
