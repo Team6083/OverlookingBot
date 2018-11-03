@@ -4,7 +4,7 @@
   "description": "a slack bot for Team 6083 Overlooking",
   "main": "src/index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test ./node_modules/.bin/nyc --reporter=text-lcov ./node_modules/.bin/mocha test/*.js",
+    "test": "cross-env NODE_ENV=test nyc --reporter=text-lcov mocha test/*.js",
     "dev": "cross-env NODE_ENV=development babel-node src/index.js",
     "build": "rm -rf ./dist/ && babel src --out-dir dist/ --copy-files",
     "prod": "cross-env NODE_ENV=production node dist/index.js",
