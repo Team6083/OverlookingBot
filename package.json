@@ -10,7 +10,7 @@
     "prod": "cross-env NODE_ENV=production node dist/index.js",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
-    "report-coverage": "cross-env codecov -t CODECOV_TOKEN"
+    "report-coverage": "codecov"
   },
   "author": "Team6083",
   "license": "MIT",
