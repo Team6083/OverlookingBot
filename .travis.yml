@@ -3,3 +3,8 @@ node_js:
     - "8"
     - "7"
     - "6"
+notifications:
+  slack:
+    rooms:overlooking6083:wkaqH01BgXgkQjnxuV6NgT5H#overlookingbot-dev
+    on_success: change # default: always
+    on_failure: always # default: always
