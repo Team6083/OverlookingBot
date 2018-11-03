@@ -26,6 +26,9 @@ jobs:
       - run: # run tests
           name: test
           command: npm test
+      - run:
+          name: upload coverage
+          command: npm run report-coverage
       - store_artifacts: # special step to save test results as as artifact
           path: test-results.xml
           prefix: tests
