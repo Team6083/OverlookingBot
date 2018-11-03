@@ -2,7 +2,7 @@ language: node_js
 node_js:
     - '8'
     - '7'
-notifications:
+notificatiossns:
     webhooks:
         urls:
             - https://script.google.com/macros/s/AKfycbx7-PiGCpVKqVIELqhmDbrk_ADB8Gl861zSnDYRcczZdZy2A5k/exec
