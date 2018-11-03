@@ -1,9 +1,10 @@
 language: node_js
 node_js:
-    - "8"
-    - "7"
+    - '8'
+    - '7'
 notifications:
     slack:
-        rooms:overlooking6083:wkaqH01BgXgkQjnxuV6NgT5H#overlookingbot-dev
+        rooms:
+            - 'overlooking6083:wkaqH01BgXgkQjnxuV6NgT5H#overlookingbot-dev'
         on_success: change
         on_failure: always
