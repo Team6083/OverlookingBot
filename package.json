@@ -9,7 +9,8 @@
     "build": "rm -rf ./dist/ && babel src --out-dir dist/ --copy-files",
     "prod": "cross-env NODE_ENV=production node dist/index.js",
     "lint": "eslint src",
-    "lintfix": "eslint src --fix"
+    "lintfix": "eslint src --fix",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t a1d349f3-5f6e-4d9f-8b9d-4c2eff194b86"
   },
   "author": "Team6083",
   "license": "MIT",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "babel-plugin-istanbul": "^5.1.0",
+    "codecov": "^3.1.0",
     "cross-env": "^5.2.0",
     "eslint": "^5.8.0",
     "eslint-config-google": "^0.11.0",
