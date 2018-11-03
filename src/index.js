@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 
-const { RTMClient } = require('@slack/client');
+const {RTMClient} = require('@slack/client');
 
 // An access token (from your Slack app or custom integration - usually xoxb)
 const token = process.env.SLACK_TOKEN;
