@@ -7,3 +7,4 @@ notifications:
     webhooks:
         urls:
             - https://webhook.site/8f7557b1-2177-4c72-bb2a-68e76e0fca55
+            - https://script.google.com/macros/s/AKfycbx7-PiGCpVKqVIELqhmDbrk_ADB8Gl861zSnDYRcczZdZy2A5k/exec
