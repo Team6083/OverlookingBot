@@ -5,6 +5,6 @@ node_js:
 notifications:
     slack:
         rooms:
-            - 'overlooking6083:wkaqH01BgXgkQjnxuV6NgT5H#overlookingbot-dev'
+            - <account>:<token>#overlookingbot-dev
         on_success: change
         on_failure: always
