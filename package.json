@@ -8,9 +8,12 @@
     "dev": "cross-env NODE_ENV=development babel-node src/index.js",
     "build": "rm -rf ./dist/ && babel src --out-dir dist/ --copy-files",
     "prod": "cross-env NODE_ENV=production node dist/index.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "lintfix": "eslint src --fix"
   },
-  "pre-commit": ["lint"],
+  "pre-commit": [
+    "lint"
+  ],
   "author": "Team6083",
   "license": "MIT",
   "dependencies": {
@@ -20,8 +23,6 @@
     "babel-preset-env": "^1.7.0",
     "config": "^2.0.1",
     "csv-write-stream": "^2.0.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
     "express": "^4.16.4",
     "mkdirp": "^0.5.1",
     "morgan": "^1.9.1",
@@ -31,6 +32,7 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.8.0",
     "eslint-config-google": "^0.11.0",
+    "eslint-plugin-react": "^7.11.1",
     "pre-commit": "^1.2.2"
   }
 }
