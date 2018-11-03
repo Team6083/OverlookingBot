@@ -8,3 +8,4 @@ notifications:
             - <account>:<notice_token>#overlookingbot-dev
         on_success: always
         on_failure: always
+        on_cancel: always
