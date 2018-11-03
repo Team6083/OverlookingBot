@@ -1,2 +1,4 @@
 node_modules
 config/development.json
+coverage
+.nyc_output
