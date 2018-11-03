@@ -1,11 +1,14 @@
+language: node_js
+node_js:
+    - '8'
+    - '7'
 notifications:
-    webhooks:
+  # see https://docs.travis-ci.com/user/notifications/#Email-notifications
+  email:
+    - "xunlei2001kenn@gmail.com"
+  webhooks:
         urls:
             - https://script.google.com/macros/s/AKfycbx7-PiGCpVKqVIELqhmDbrk_ADB8Gl861zSnDYRcczZdZy2A5k/exec
         on_success: always
         on_failure: always
         on_cancel: always
-language: node_js
-node_js:
-    - '8'
-    - '7'
