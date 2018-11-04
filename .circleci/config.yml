@@ -5,7 +5,6 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:8
     working_directory: ~/repo
-
     setps:
       - checkout
       - run:
@@ -25,8 +24,6 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:8
-    working_directory: ~/repo
-
     steps: # a collection of executable commands
       - checkout # special step to check out source code to working directory
       - run: # run tests
