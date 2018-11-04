@@ -19,7 +19,12 @@ references:
       keys:
         - *npm_cache_key
         - *npm_backup_cache_key
-
+  restore_repo: &restore_repo
+    restore_cache:
+      keys:
+        - v1-repo-{{ .Branch }}-{{ .Revision }}
+        - v1-repo-{{ .Branch }}
+        - v1-repo
 jobs:
   setup_env:
     <<: *container_config
