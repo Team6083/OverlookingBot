@@ -1,13 +1,31 @@
 version: 2
-jobs:
-  build:
+references:
+  container_config: &container_config
     docker:
-      # specify the version you desire here
       - image: circleci/node:8
     working_directory: ~/repo
+  workspace_root: &workspace_root
+    /tmp/workspace
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+  npm_cache_key: &npm_cache_key
+    dependency-cache-{{ checksum "package.json" }}
+  npm_backup_cache_key: &npm_backup_cache_key
+    dependency-cache
 
-    steps: # a collection of executable commands
-      - checkout # special step to check out source code to working directory
+  restore_node_modules: &restore_node_modules
+    restore_cache:
+      keys:
+        - *npm_cache_key
+        - *npm_backup_cache_key
+
+jobs:
+  setup_env:
+    <<: *container_config
+    steps:
+      - *restore_node_modules
+      - checkout
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@6.4.1'
@@ -15,19 +33,22 @@ jobs:
           name: install-npm-wee
           command: npm install
       - save_cache: # special step to save the dependency cache
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: *npm_cache_key
           paths:
             - ./node_modules
+      - save_cache:
+          key: v1-repo-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - .
+  build:
+    <<: *container_config
+    steps: # a collection of executable commands
+      - *attach_workspace
+      - *restore_repo
+      - *restore_node_modules
       - run:
           name: eslint check
           command: npm run lint
-  test:
-    docker:
-      - image: circleci/node:8
-    working_directory: ~/repo
-
-    steps:
-      - checkout
       - run:
           name: test
           command: npm test
@@ -42,11 +63,21 @@ jobs:
           prefix: coverage
       - store_test_results: # special step to upload test results for display in Test Summary
           path: test-results.xml
+  deploy:
+    <<: *container_config
+    steps:
+      - *attach_workspace
+      - *restore_repo
+      - *restore_node_modules
+
 workflows:
   version: 2
-  build_and_test:
+  build-and-deploy:
     jobs:
       - build
-      - test:
+      - deploy:
           requires:
           - build
+          filters:
+            branches:
+              only: master
