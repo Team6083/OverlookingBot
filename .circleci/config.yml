@@ -29,8 +29,8 @@ jobs:
   setup_env:
     <<: *container_config
     steps:
-      - *restore_node_modules
       - checkout
+      - *restore_node_modules
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@6.4.1'
@@ -79,7 +79,10 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
+      - setup_env
+      - build:
+          requires:
+          - setup_env
       - deploy:
           requires:
           - build
