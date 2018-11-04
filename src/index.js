@@ -7,7 +7,7 @@ import express from 'express';
 import http from 'http';
 
 import bootstrap from './bootstrap';
-import { log, normalizePort } from './utils';
+import {log, normalizePort} from './utils';
 
 const token = process.env.SLACK_TOKEN;
 
@@ -38,8 +38,6 @@ app.start().catch((err) => {
 });
 
 export default app;
-
-
 
 // // The client is initialized and then started to get an active connection to the platform
 // const rtm = new RTMClient(token);
