@@ -6,7 +6,7 @@ import http from 'http';
 
 import bootstrap from './bootstrap';
 import {log, normalizePort} from './utils';
-import slackModule from './modules/slack/index.js'
+import slackModule from './modules/slack/index.js';
 
 const app = express();
 app.start = async () => {
@@ -38,7 +38,7 @@ app.start().catch((err) => {
 const slackConfig = config.get('slack');
 const slackBot = async () => {
   slackModule(slackConfig);
-}
+};
 
 slackBot().catch((err) => {
   log.error(err);

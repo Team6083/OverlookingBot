@@ -11,7 +11,7 @@ module.exports = {
     "rules": {
         "quotes": ["warn", "single"],
         "no-unused-vars": ["warn", { "vars": "all", "args": "after-used"}],
-        "max-len": ["error", { "ignoreComments": true }],
+        "max-len": ["warn", { "ignoreComments": true }],
         "linebreak-style": ["warn", "unix"],
         "require-jsdoc": "off"
     }
