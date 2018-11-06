@@ -7,7 +7,17 @@ import http from 'http';
 import bootstrap from './bootstrap';
 import {log, normalizePort} from './utils';
 import slackModule from './modules/slack/index.js';
+import {getWeb} from './modules/slack/index.js';
 import firebaseModule from './modules/firebase/index.js';
+
+const slackConfig = config.get('slack');
+const slackBot = async () => {
+  slackModule(slackConfig, firebaseModule.db());
+};
+
+slackBot().catch((err) => {
+  log.error(err);
+});
 
 const app = express();
 app.start = async () => {
@@ -32,24 +42,6 @@ app.start = async () => {
 };
 
 app.start().catch((err) => {
-  log.error(err);
-});
-
-const firebaseConfig = config.get('firebase');
-const firebaseApp = async () => {
-  firebaseModule.init(firebaseConfig);
-};
-
-firebaseApp().catch((err) => {
-  log.error(err);
-});
-
-const slackConfig = config.get('slack');
-const slackBot = async () => {
-  slackModule(slackConfig, firebaseModule.db());
-};
-
-slackBot().catch((err) => {
   log.error(err);
 });
 
