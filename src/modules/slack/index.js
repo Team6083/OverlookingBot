@@ -1,6 +1,6 @@
 const {RTMClient, WebClient} = require('@slack/client');
 import {log} from '../../utils';
-import firebase from '../firebase/index'
+import firebase from '../firebase/index';
 
 const token = process.env.SLACK_TOKEN;
 const rtm = new RTMClient(token);
@@ -41,4 +41,4 @@ module.exports.getRTM = () => {
 
 module.exports.getWeb = () => {
   return web;
-}
+};
