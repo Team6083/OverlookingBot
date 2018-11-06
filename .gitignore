@@ -1,5 +1,6 @@
 node_modules
 config/development.json
+config/firebaseServiceAccount.json
 coverage
 .nyc_output
 coverage.lcov

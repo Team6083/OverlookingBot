@@ -13,6 +13,7 @@ module.exports = {
         "no-unused-vars": ["warn", { "vars": "all", "args": "after-used"}],
         "max-len": ["warn", { "ignoreComments": true }],
         "linebreak-style": ["warn", "unix"],
-        "require-jsdoc": "off"
+        "require-jsdoc": "off",
+        "padded-blocks": "off"
     }
 };
