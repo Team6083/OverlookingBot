@@ -4,3 +4,4 @@ config/firebaseServiceAccount.json
 coverage
 .nyc_output
 coverage.lcov
+*.cache
