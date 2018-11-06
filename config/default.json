@@ -1,4 +1,7 @@
 {
   "port": 8000,
-  "slack": {}
+  "slack": {},
+  "firebase": {
+    "databaseURL": ""
+  }
 }
