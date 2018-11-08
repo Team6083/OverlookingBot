@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Users - OverlookingBot</title>
+  <title>Channels - OverlookingBot</title>
 
   <!--Load Pace-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
@@ -45,8 +45,8 @@
             <tr>
               <th scope="col">id</th>
               <th scope="col">name</th>
-              <th scope="col">level</th>
-              <th scope="col">email</th>
+              <th scope="col">members</th>
+              <th scope="col">purpose</th>
               <th scope="col">type</th>
             </tr>
           </thead>
@@ -59,10 +59,10 @@
 
   <script>
     $("#navBarContainer").load("/navBar.html", function (value) {
-      $("#nav-users").addClass("active");
+      $("#nav-channels").addClass("active");
     });
   </script>
-  <script src="js/pageScripts/usersPage.js"></script>
+  <script src="js/pageScripts/channelsPage.js"></script>
 </body>
 
 </html>

@@ -14,13 +14,11 @@ var usersTable = $("#usersTable").DataTable({
     // ]
 });
 
-db.collection('slack').doc('users').collection('list').where('is_bot','==',false).where('deleted','==',false).onSnapshot(function(querySnapshot) {
+db.collection('slack').doc('channels').collection('list').where('is_archived','==',false).onSnapshot(function(querySnapshot) {
     usersTable.clear();
     querySnapshot.forEach((doc) => {
         let data = doc.data();
-        let email = (data.profile.email == undefined)?"":data.profile.email;
-        let name = (data.profile.display_name == undefined || data.profile.display_name === "")?'['+data.name+']':data.profile.display_name;
         
-        usersTable.row.add([doc.id,name,0,email,""]).draw();
+        usersTable.row.add([doc.id,data.name,data.num_members,data.topic.value,""]).draw();
     });
 });
