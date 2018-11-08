@@ -9,6 +9,11 @@ const config = {
 };
 firebase.initializeApp(config);
 
+const db = firebase.firestore();
+db.settings({
+  timestampsInSnapshots: true
+});
+
 function login() {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithRedirect(provider);
