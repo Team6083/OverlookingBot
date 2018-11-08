@@ -14,7 +14,7 @@ db.settings({
   timestampsInSnapshots: true
 });
 
-function login() {
+const login = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithRedirect(provider);
   firebase.auth().getRedirectResult().then(function(result) {
@@ -25,6 +25,15 @@ function login() {
     console.error(errorCode, errorMessage);
   });
 }
+
+const logout = () =>{
+  firebase.auth().signOut().then(function() {
+    
+  }).catch(function(error) {
+    console.error(error);
+  });
+}
+
 
 let loginUser = null;
 
