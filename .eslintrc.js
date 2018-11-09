@@ -14,6 +14,7 @@ module.exports = {
         "max-len": ["warn", { "ignoreComments": true }],
         "linebreak-style": ["warn", "unix"],
         "require-jsdoc": "off",
-        "padded-blocks": "off"
+        "padded-blocks": "off",
+        "new-cap": "warn"
     }
 };
