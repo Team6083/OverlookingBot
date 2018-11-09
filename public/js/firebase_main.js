@@ -11,13 +11,13 @@ firebase.initializeApp(config);
 
 const db = firebase.firestore();
 db.settings({
-  timestampsInSnapshots: true
+  timestampsInSnapshots: true,
 });
 
-const login = () => {
+function login() {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithRedirect(provider);
-  firebase.auth().getRedirectResult().then(function(result) {
+  firebase.auth().getRedirectResult().then(function() {
     console.log('Login success');
   }).catch(function(error) {
     const errorCode = error.code;
@@ -26,9 +26,9 @@ const login = () => {
   });
 }
 
-const logout = () =>{
+function logout() {
   firebase.auth().signOut().then(function() {
-    
+
   }).catch(function(error) {
     console.error(error);
   });
