@@ -1,9 +1,9 @@
 import express from 'express';
 
-import {log} from './utils';
+import { log } from './utils';
 
-import {db} from './modules/firebase/index';
-import {getWeb} from './modules/slack/index';
+import { db } from './modules/firebase/index';
+import { getWeb } from './modules/slack/index';
 
 const router = new express.Router();
 const firestore = db();
@@ -19,7 +19,7 @@ router.post('/slack/refreshChannels', (req, res) => {
       res.sendStatus(200);
     } else {
       log.wanrning(`Error occurred: ${resGet.error}`);
-      res.status(500).send('Internal Server Error:'+resGet.error);
+      res.status(500).send('Internal Server Error:' + resGet.error);
     }
   });
 });
@@ -36,9 +36,13 @@ router.post('/slack/refrechUsers', (req, res) => {
       res.sendStatus(200);
     } else {
       log.wanrning(`Error occurred: ${resGet.error}`);
-      res.status(500).send('Internal Server Error:'+resGet.error);
+      res.status(500).send('Internal Server Error:' + resGet.error);
     }
   });
+});
+
+router.post('/slack/addToDo', (req, res) => {
+  console.log(req.body);
 });
 
 export default router;
