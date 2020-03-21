@@ -16,6 +16,7 @@ module.exports = {
         "require-jsdoc": "off",
         "padded-blocks": "off",
         "new-cap": "warn",
-        "object-curly-spacing": "off"
+        "object-curly-spacing": "off",
+        "space-before-function-paren": "off"
     }
 };

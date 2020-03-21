@@ -5,9 +5,9 @@ import express from 'express';
 import http from 'http';
 
 import bootstrap from './bootstrap';
-import {log, normalizePort} from './utils';
+import { log, normalizePort } from './utils';
 import slackModule from './modules/slack/index.js';
-import {getWeb} from './modules/slack/index.js';
+import { getWeb } from './modules/slack/index.js';
 import firebaseModule from './modules/firebase/index.js';
 
 const slackConfig = config.get('slack');
