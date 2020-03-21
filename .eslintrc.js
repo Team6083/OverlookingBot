@@ -1,5 +1,5 @@
 module.exports = {
-  "env": {
+    "env": {
         "es6": true,
         "node": true
     },
@@ -10,11 +10,12 @@ module.exports = {
     },
     "rules": {
         "quotes": ["warn", "single"],
-        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used"}],
+        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used" }],
         "max-len": ["warn", { "ignoreComments": true }],
         "linebreak-style": ["warn", "unix"],
         "require-jsdoc": "off",
         "padded-blocks": "off",
-        "new-cap": "warn"
+        "new-cap": "warn",
+        "object-curly-spacing": "off"
     }
 };
